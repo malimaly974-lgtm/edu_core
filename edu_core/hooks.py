@@ -5,6 +5,13 @@ app_description = "A faire"
 app_email = "malimaly974@gmail.com"
 app_license = "gpl-3.0"
 
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": [["dt", "in", ["Student", "Instructor"]]]
+    }
+]
+
 # Apps
 # ------------------
 
