@@ -2,6 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
+ "autoname": "field:campus_name",
  "creation": "2026-07-23 00:05:01.070620",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,7 +11,9 @@
   "is_main_campus",
   "campus_name",
   "city",
-  "address"
+  "address",
+  "company",
+  "establishment"
  ],
  "fields": [
   {
@@ -41,15 +44,30 @@
    "fieldname": "is_main_campus",
    "fieldtype": "Check",
    "label": "Is main campus"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "establishment",
+   "fieldtype": "Link",
+   "label": "Establishment",
+   "options": "Establishment",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-23 01:33:18.374670",
+ "modified": "2026-07-25 23:22:32.734375",
  "modified_by": "Administrator",
  "module": "edu_core",
  "name": "Campus",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
