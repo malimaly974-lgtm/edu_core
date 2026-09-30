@@ -9,6 +9,14 @@ fixtures = [
     {
         "doctype": "Custom Field",
         "filters": [["dt", "in", ["Student", "Instructor"]]]
+    },
+    {
+        "doctype": "Role",
+        "filters": [["name", "=", "Establishment Manager"]]
+    },
+    {
+        "doctype": "Custom DocPerm",
+        "filters": [["parent", "in", ["Establishment", "Campus"]]]
     }
 ]
 
