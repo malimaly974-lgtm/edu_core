@@ -16,7 +16,7 @@ fixtures = [
     },
     {
         "doctype": "Custom DocPerm",
-        "filters": [["parent", "in", ["Establishment", "Campus"]]]
+        "filters": [["parent", "in", ["Establishment", "Campus", "Certification Type", "Certification"]]]
     }
 ]
 

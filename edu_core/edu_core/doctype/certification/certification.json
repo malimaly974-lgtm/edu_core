@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "CERT-.YYYY.-.#####",
+ "creation": "2026-09-30 17:18:19.243734",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_4jgk",
+  "certificate_number",
+  "student",
+  "certification_type",
+  "establishment",
+  "campus",
+  "academic_year",
+  "issue_date",
+  "expiry_date",
+  "status",
+  "verification_code",
+  "issued_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_4jgk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "certificate_number",
+   "fieldtype": "Data",
+   "label": "certificate_number"
+  },
+  {
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "student",
+   "options": "Student",
+   "reqd": 1
+  },
+  {
+   "fieldname": "certification_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "certification_type",
+   "options": "Certification Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "establishment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "establishment",
+   "options": "Establishment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "campus",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "campus",
+   "options": "Campus",
+   "reqd": 1
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Link",
+   "label": "academic_year",
+   "options": "Academic Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "issue_date ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "expiry_date"
+  },
+  {
+   "default": "Valid",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "status",
+   "options": "Valid\nExpired\nRevoked"
+  },
+  {
+   "fieldname": "verification_code",
+   "fieldtype": "Data",
+   "label": "verification_code",
+   "unique": 1
+  },
+  {
+   "default": "__user",
+   "fieldname": "issued_by",
+   "fieldtype": "Link",
+   "label": "issued_by   ",
+   "options": "User"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-01 01:31:15.835716",
+ "modified_by": "Administrator",
+ "module": "edu_core",
+ "name": "Certification",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
