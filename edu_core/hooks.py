@@ -271,3 +271,12 @@ fixtures = [
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+
+# --- Sécurité : un étudiant ne voit que ses propres certificats ---
+permission_query_conditions = {
+    "Certification": "edu_core.permissions.certification_query",
+}
+
+has_permission = {
+    "Certification": "edu_core.permissions.certification_has_permission",
+}
