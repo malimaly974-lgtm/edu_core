@@ -3,23 +3,26 @@
 <div style="max-width:600px;margin:40px auto;font-family:sans-serif;">
   <h2>Vérification de certificat</h2>
   <form method="get">
-    <input type="text" name="code" placeholder="Code de vérification"
-           value="{{ code or '' }}" style="padding:8px;width:70%;">
+    <input type="text" name="code" maxlength="16"
+           placeholder="Code de vérification (16 caractères)"
+           value="{{ code | e }}" style="padding:8px;width:70%;">
     <button type="submit" style="padding:8px 16px;">Vérifier</button>
   </form>
 
-  {% if code %}
+  {% if searched %}
     {% if certificate %}
-      <div style="margin-top:20px;padding:16px;border:2px solid green;border-radius:8px;">
-        <p><strong>✅ Certificat valide</strong></p>
-        <p>Numéro : {{ certificate.certificate_number }}</p>
-        <p>Statut : {{ certificate.status }}</p>
-        <p>Émis le : {{ certificate.issue_date }}</p>
-        <p>Expire le : {{ certificate.expiry_date or "Illimité" }}</p>
+      <div style="margin-top:20px;padding:16px;border:2px solid {{ certificate.color | e }};border-radius:8px;">
+        <p><strong>{{ certificate.label | e }}</strong></p>
+        <p>Titulaire : {{ certificate.holder_name | e }}</p>
+        <p>Certification : {{ certificate.type_title | e }}</p>
+        <p>Délivré par : {{ certificate.issuer_name | e }}</p>
+        <p>Numéro : {{ certificate.name | e }}</p>
+        <p>Émis le : {{ certificate.issue_date | e }}</p>
+        <p>Expire le : {{ (certificate.expiry_date or "Illimité") | e }}</p>
       </div>
     {% else %}
-      <div style="margin-top:20px;padding:16px;border:2px solid red;border-radius:8px;">
-        <p>❌ Aucun certificat trouvé pour ce code</p>
+      <div style="margin-top:20px;padding:16px;border:2px solid #b00020;border-radius:8px;">
+        <p>Aucun certificat trouvé pour ce code.</p>
       </div>
     {% endif %}
   {% endif %}
