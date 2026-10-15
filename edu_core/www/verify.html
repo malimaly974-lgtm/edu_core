@@ -1,0 +1,27 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<div style="max-width:600px;margin:40px auto;font-family:sans-serif;">
+  <h2>Vérification de certificat</h2>
+  <form method="get">
+    <input type="text" name="code" placeholder="Code de vérification"
+           value="{{ code or '' }}" style="padding:8px;width:70%;">
+    <button type="submit" style="padding:8px 16px;">Vérifier</button>
+  </form>
+
+  {% if code %}
+    {% if certificate %}
+      <div style="margin-top:20px;padding:16px;border:2px solid green;border-radius:8px;">
+        <p><strong>✅ Certificat valide</strong></p>
+        <p>Numéro : {{ certificate.certificate_number }}</p>
+        <p>Statut : {{ certificate.status }}</p>
+        <p>Émis le : {{ certificate.issue_date }}</p>
+        <p>Expire le : {{ certificate.expiry_date or "Illimité" }}</p>
+      </div>
+    {% else %}
+      <div style="margin-top:20px;padding:16px;border:2px solid red;border-radius:8px;">
+        <p>❌ Aucun certificat trouvé pour ce code</p>
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
+{% endblock %}
